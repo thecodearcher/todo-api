@@ -2,6 +2,9 @@
   "name": "node-typescript",
   "version": "1.0.0",
   "description": "Node with express using typescript",
+  "contributors": [
+    "Jerry Ejonavi"
+  ],
   "main": "./dist/index.js",
   "scripts": {
     "post-install": "mkdir ./logs",
