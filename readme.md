@@ -1,13 +1,4 @@
-# Node/Express using typescript
-
-### Boilerplate for using typescript in node. 
-
-## Features
-* Uses typescript
-* Basic mysql/sequlize model setup
-* Global error handling
-* Request input validation using [Joi](https://github.com/hapijs/joi)
-_ _ _ _
+# Todo-api
 
 ## Quick Start
 
