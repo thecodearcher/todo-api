@@ -1,4 +1,4 @@
-import { IUser } from ".";
+// import { IUser } from ".";
 import { BaseController } from "../baseController";
 
 /**
@@ -8,11 +8,8 @@ import { BaseController } from "../baseController";
  * @class UserController
  */
 export class UserController extends BaseController {
-    // private _userService = new UserService();
 
     public getUserDetails = async (id) => {
+        return this.sendResponse(id);
      }
-
-    public addUser = async (user: IUser) => {
-    }
 }
