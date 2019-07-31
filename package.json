@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Node with express using typescript",
   "contributors": [
-    "Jerry Ejonavi"
+    "Jerry Ejonavi",
+    "Kerry Okpere",
+    "Ero osamuyi"
   ],
   "main": "./dist/index.js",
   "scripts": {
