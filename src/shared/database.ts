@@ -4,7 +4,7 @@ const db = mysql.createConnection(
     {
         host: "localhost",
         user: "kerry",
-        password: "flexible",
+        password: "password",
         database: "todo_api",
     },
 );
