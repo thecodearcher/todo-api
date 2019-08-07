@@ -23,11 +23,12 @@ export class UserController extends BaseController {
        return this.sendResponse(`${username} created.`);
     //    don't stil get thnis place
     }
-    public createMainUser = async (username: string, firstName: string, lastName: string, password) => {
-        const user = userModel.createDbDetails(username, firstName, lastName, password);
+    public createMainUser = async (userDetails: any) => {
+        const user = userModel.createDbDetails(userDetails);
+        const { loginName } = userDetails;
         if (!user) {
             throw new Error("could not create user");
         }
-        return this.sendResponse(`${username} created.`);
+        return this.sendResponse(`${loginName} created.`);
     }
 }

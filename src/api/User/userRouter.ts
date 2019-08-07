@@ -9,7 +9,6 @@ const User = new UserController();
 
 router.get("/:id", call(User.getUserDetails, (req, _res, _next) => [req.params.id]));
 
-router.post("/", call(User.createMainUser, (req, _res, _next) => [req.body.username,
-     req.body.firstName, req.body.lastName, req.body.password]));
+router.post("/", call(User.createMainUser, (req, _res, _next) => [req.body]));
     // tslint:disable-next-line: max-line-length
 export const userRouter = router;

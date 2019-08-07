@@ -25,7 +25,7 @@ export class UserModel {
         } );
         return true;
     }
-    public  createDbDetails(loginName, firstName, lastName, password) {
+    public  createDbDetails({loginName, firstName, lastName, password}) {
         // tslint:disable-next-line: max-line-length
         db.query(`INSERT INTO users (username, firstName, lastName, password) VALUES ('${loginName}', '${firstName}', '${lastName}', '${password}')`,
         (err, results, fields) => {
