@@ -3,9 +3,9 @@ import mysql from "mysql";
 const db = mysql.createConnection(
     {
         host: "localhost",
-        user: "kerry",
-        password: "password",
-        database: "todo_api",
+        user: "muyi",
+        password: "fedgac11451",
+        database: "todo",
     },
 );
 

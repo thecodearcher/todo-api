@@ -2,7 +2,7 @@ import express from "express";
 import { userRouter } from "./api/User";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
-
+import { todoRouter } from "./api/todo/todoRouter"
 class App {
     public express = express();
     constructor() {
@@ -18,6 +18,7 @@ class App {
 
     private mountRoutes() {
         this.express.use("/user", userRouter);
+        this.express.use("/todo", todoRouter)
     }
 
     private registerMiddlewares() {
