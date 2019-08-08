@@ -4,7 +4,7 @@ import { todoController } from "./todoController";
 const router = express.Router();
 const call = controllerHandler;
 const todo = new todoController();
-//;ll klklk
+//todo added by muyi
 router.get("/:todo", call(todo.getTodoDetails, (req, _res, _next) => [req.params.todo]));
 
 router.post("/", call(todo.createMainTodo, (req, _res, _next) => [req.body]));
