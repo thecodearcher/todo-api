@@ -16,7 +16,7 @@ export class todoModal{
      return true;
  }
   public create(title:string, body:string){
-     db.query(`INSERT INTO 'users' (title, body) VALUES (${title}, ${body})`, (err, results, feilds) => {
+     db.query(`INSERT INTO 'todo' (title, body) VALUES (${title}, ${body})`, (err, results, feilds) => {
     if (err) {
         logger.error(err.message);
         return false;
@@ -36,5 +36,8 @@ export class todoModal{
     });
     return true;
 }
+ public update(title,body){
+       db.query("UPDATE todo SET lastname='Doe' WHERE =2")
+ }
 
 }
