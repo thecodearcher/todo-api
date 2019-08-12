@@ -1,5 +1,7 @@
 import express from "express";
 import { userRouter } from "./api/User";
+// import { UserModel } from "./api/User";
+import connection from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
 
@@ -13,7 +15,19 @@ class App {
         this.registerMiddlewares();
         this.mountRoutes();
         this.handleUncaughtErrorEvents();
+        this.startDb();
 
+    }
+    private startDb() {
+        connection.authenticate()
+        .then(() => {
+            // new UserModel().init();
+            logger.info("Connected to database successfully");
+        })
+        .catch( (err) => {
+            logger.error(err);
+            throw new Error(err.message);
+        });
     }
 
     private mountRoutes() {
