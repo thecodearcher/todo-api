@@ -6,3 +6,4 @@ const connection = new Sequelize(`${DB_NAME}`, `${DB_USER}`, `${DB_PASSWORD}`, {
     dialect: "mysql",
 });
 export default connection;
+
