@@ -14,12 +14,18 @@ export class UserServices {
             password: data.password,
             email: data.email });
     }
-    public updateUserDetails(username, newFirstName) {
-        userModel.update(
-            {firstName: newFirstName},
-            {
-                where: {username},
-            });
+    public updateUserDetails(username: string,
+                             data:
+                             {username: string, firstName: string, lastName: string, password: string, email: string}) {
+                                userModel.update({
+                                    firstName: data.firstName,
+                                    lastName: data.lastName,
+                                    password: data.password,
+                                    email: data.email,
+                                },
+                                {
+                                    where: {username},
+                                });
             // .then( (results) => {
             //     console.log(results);
             // });
