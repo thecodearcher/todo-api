@@ -1,4 +1,4 @@
-import { connection } from "../../shared/database";
+import { db } from "../../shared/database";
 import Sequelize, { Model } from "sequelize";
 import { logger } from "../../utils/logger";
 
@@ -10,10 +10,10 @@ UserModel.init({
         lastName: Sequelize.STRING,
         password: Sequelize.STRING,
         email: Sequelize.STRING,
-    }, { sequelize: connection, modelName: "user" });
+    }, { sequelize: db, modelName: "user" });
 
 UserModel.sync({alter: true}).then( () => {
-    logger.info("created tables");
+    logger.info("User Table created.");
 }).catch( (err) => {
     throw new Error(err);
 });
