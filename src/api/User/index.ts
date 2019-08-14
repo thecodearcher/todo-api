@@ -1,3 +1,4 @@
 import {UserModel} from "./userModel";
 import { userRouter } from "./userRouter";
-export { userRouter, UserModel};
+import { UserServices } from "./userServices";
+export { userRouter, UserModel, UserServices};

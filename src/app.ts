@@ -1,10 +1,10 @@
+import { AppError } from "./utils/app-error";
 import express from "express";
 import { userRouter } from "./api/User";
-// import { UserModel } from "./api/User";
-import connection from "./shared/database";
+import { db } from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
-import { todoRouter } from "./api/todo/todoRouter"
+
 class App {
     public express = express();
     constructor() {
@@ -19,20 +19,19 @@ class App {
 
     }
     private startDb() {
-        connection.authenticate()
+        db.authenticate()
         .then(() => {
             // new UserModel().init();
             logger.info("Connected to database successfully");
         })
         .catch( (err) => {
             logger.error(err);
-            throw new Error(err.message);
+            throw new AppError(err.message);
         });
     }
 
     private mountRoutes() {
         this.express.use("/user", userRouter);
-        this.express.use("/todo", todoRouter)
     }
 
     private registerMiddlewares() {
