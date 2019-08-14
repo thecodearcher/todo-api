@@ -1,3 +1,4 @@
+import { AppError } from './../../utils/app-error';
 import { db } from "../../shared/database";
 import Sequelize, { Model } from "sequelize";
 import { logger } from "../../utils/logger";
@@ -15,5 +16,5 @@ UserModel.init({
 UserModel.sync({alter: true}).then( () => {
     logger.info("User Table created.");
 }).catch( (err) => {
-    throw new Error(err);
+    throw new AppError(err);
 });
