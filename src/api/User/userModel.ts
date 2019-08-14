@@ -1,4 +1,4 @@
-import { AppError } from './../../utils/app-error';
+import { AppError } from "./../../utils/app-error";
 import { db } from "../../shared/database";
 import Sequelize, { Model } from "sequelize";
 import { logger } from "../../utils/logger";
