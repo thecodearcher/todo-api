@@ -4,7 +4,7 @@ import { userRouter } from "./api/User";
 import { db } from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
-import { todoRouter } from "./api/todo";
+import { todoRouter } from "./api/Todo";
 
 class App {
     public express = express();

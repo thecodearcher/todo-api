@@ -1,16 +1,16 @@
-import { todoModel } from "./todoModel";
+import { TodoModel } from "./todoModel";
 
-const TodoModel = todoModel;
+const TodoModels = TodoModel;
 
-class todoservices {
+export class TodoServices {
     public getTodo(id) {
-        TodoModel.findAll({ where: { id }});
+        TodoModels.findAll({ where: { id }});
     }
     public createTodo(data: {title: string, body: string, }) {
-        TodoModel.create({title: data.title,body: data.body,})
+        TodoModels.create({title: data.title,body: data.body,})
     }
-    public updateTodo(title: string,data:{title: string, body: string,}) 
-             {todoModel.update({title: data.title,body: data.body,},{where: {title},});
+    public updateTodo(title: string,data:{title: string, body: string,}) {
+          TodoModels.update({title: data.title,body: data.body,},{where: {title},});
     }
 }
-export { todoservices }
+// export { TodoServices }

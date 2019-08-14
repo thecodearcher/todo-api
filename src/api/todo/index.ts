@@ -1,4 +1,4 @@
-import {todoModel} from "./todoModel";
+import {TodoModel} from "./todoModel";
 import { todoRouter } from "./todoRouter";
-import { todoservices } from "./todoService";
-export { todoRouter, todoModel, todoservices};
+import { TodoServices } from "./todoService";
+export { todoRouter, TodoModel,TodoServices};

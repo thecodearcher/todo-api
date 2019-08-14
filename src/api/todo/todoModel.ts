@@ -3,15 +3,16 @@ import { db } from "../../shared/database";
 import Sequelize, { Model } from "sequelize";
 import { logger } from "../../utils/logger";
 
- class todoModel extends Model {}
-     todoModel.init({
+class TodoModel extends Model {}
+     TodoModel.init({
           title: Sequelize.STRING,
           body: Sequelize.STRING,
       },{sequelize: db, modelName:"todo"});
 
-     todoModel.sync({alter: true}).then(() => {
+     TodoModel.sync({alter: true}).then(() => {
            logger.info("todo Table created.");
        }).catch( (err) => {
     throw new AppError(err);
 });
-export { todoModel } 
+
+export { TodoModel }
