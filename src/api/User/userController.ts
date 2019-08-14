@@ -22,8 +22,8 @@ export class UserController extends BaseController {
         console.log(user);
         return this.sendResponse(`${ username } created`);
     }
-     public updateUser = async (user_name, userDetails) => {
-        const update = await userServices.updateUserDetails(user_name, userDetails);
+     public updateUser = async (userName, userDetails) => {
+        const update = await userServices.updateUserDetails(useName, userDetails);
         const { username } = userDetails;
         console.log(update);
         return this.sendResponse(`${username} updated`);
