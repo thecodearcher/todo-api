@@ -14,7 +14,8 @@
         "no-var-keyword":true,
         "no-angle-bracket-type-assertion":false,
         "prefer-const":false,
-        "no-unused-variable":true
+        "no-unused-variable":true,
+        "ordered-imports":false
     },
     "rulesDirectory": []
 }

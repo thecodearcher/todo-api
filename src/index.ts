@@ -1,8 +1,10 @@
 import app from "./app";
 import { logger } from "./utils/logger";
+import { PORT } from "./config/index";
 
-const port =  3000;
+const port = PORT || 3000;
 app.set("port", port);
+
 app.listen(app.get("port"), (err) => {
     if (err) {
         return logger.error(err);

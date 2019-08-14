@@ -1,8 +1,8 @@
 import express from "express";
-import { userRouter } from "./api/User";
+import { todoRouter } from "./api/Todo";
+import  { connection } from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
-
 class App {
     public express = express();
     constructor() {
@@ -13,11 +13,24 @@ class App {
         this.registerMiddlewares();
         this.mountRoutes();
         this.handleUncaughtErrorEvents();
+        this.startDb();
 
+    }
+    private startDb() {
+        connection.authenticate()
+        .then(() => {
+            logger.info("Connected to database successfully");
+        })
+        .catch( (err) => {
+            logger.error(err);
+            // throw new Error(err.message);
+        });
     }
 
     private mountRoutes() {
-        this.express.use("/user", userRouter);
+        
+        // this.express.use("/user", userRouter);
+         this.express.use("/todo", todoRouter)
     }
 
     private registerMiddlewares() {
