@@ -3,6 +3,10 @@ import { todoRouter } from "./api/Todo";
 import  { connection } from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
+<<<<<<< HEAD
+=======
+import { todoRouter } from "./api/todo/todoRouter"
+>>>>>>> 874518de8ab14415c30f38b7101360d1fe341192
 class App {
     public express = express();
     constructor() {
@@ -28,9 +32,14 @@ class App {
     }
 
     private mountRoutes() {
+<<<<<<< HEAD
         
         // this.express.use("/user", userRouter);
          this.express.use("/todo", todoRouter)
+=======
+        this.express.use("/user", userRouter);
+        this.express.use("/todo", todoRouter)
+>>>>>>> 874518de8ab14415c30f38b7101360d1fe341192
     }
 
     private registerMiddlewares() {
