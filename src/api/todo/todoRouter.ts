@@ -10,6 +10,7 @@ router.get("/:id", call(Todo.getTodoDetails, (req, _res, _next) => [req.params.i
 
 router.post("/", call(Todo.createTodo, (req, _res, _next) => [req.body]));
 
-// router.put("/", call(Todo.updateTodo), (req,_res,_next)=> [req.params.todo,req.body]))
+router.put("/", call(Todo.updateTodo), (req,_res,_next)=> [req.params.todo,req.body])
+
 
 export const todoRouter = router;
