@@ -4,6 +4,7 @@ import { userRouter } from "./api/User";
 import { db } from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
+import { todoRouter } from "./api/Todo/index";
 
 class App {
     public express = express();
@@ -21,7 +22,6 @@ class App {
     private startDb() {
         db.authenticate()
         .then(() => {
-            // new UserModel().init();
             logger.info("Connected to database successfully");
         })
         .catch( (err) => {
@@ -31,6 +31,7 @@ class App {
     }
 
     private mountRoutes() {
+        this.express.use("/todo",todoRouter)
         this.express.use("/user", userRouter);
     }
 
