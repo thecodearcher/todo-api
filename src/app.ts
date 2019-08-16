@@ -4,7 +4,7 @@ import { userRouter } from "./api/User";
 import { db } from "./shared/database";
 import { errorHandler, global } from "./middleware";
 import { logger } from "./utils/logger";
-import { TodoRouter } from "./api/Todo";
+import { todoRouter } from "./api/Todo/index";
 
 class App {
     public express = express();
@@ -31,7 +31,7 @@ class App {
     }
 
     private mountRoutes() {
-    this.express.use("/todo",TodoRouter)
+        this.express.use("/todo",todoRouter)
         this.express.use("/user", userRouter);
     }
 

@@ -1,6 +1,5 @@
 import express from "express";
 import { controllerHandler } from "../../shared/controllerHandler";
-// import { logger } from "../../utils/logger";
 import { TodoController } from "./todoController";
 
 const router = express.Router();
@@ -11,5 +10,6 @@ router.get("/:id", call(Todo.getTodoDetails, (req, _res, _next) => [req.params.i
 
 router.post("/", call(Todo.createTodo, (req, _res, _next) => [req.body]));
 
+// router.put("/", call(Todo.updateTodo), (req,_res,_next)=> [req.params.todo,req.body]))
 
-export const TodoRouter = router;
+export const todoRouter = router;
