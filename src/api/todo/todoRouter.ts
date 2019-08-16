@@ -1,12 +1,16 @@
 import express from "express";
 import { controllerHandler } from "../../shared/controllerHandler";
-import { todoController } from "./todoController";
+import { TodoController } from "./todoController";
+
 const router = express.Router();
 const call = controllerHandler;
-const todo = new todoController();
+const Todo = new TodoController();
 
-router.get("/:todo", call(todo.getTodoDetails, (req, _res, _next) => [req.params.todo]));
+router.get("/:id", call(Todo.getTodoDetails, (req, _res, _next) => [req.params.id]));
 
-router.post("/", call(todo.createMainTodo, (req, _res, _next) => [req.body]));
-    // tslint:disable-next-line: max-line-length
+router.post("/", call(Todo.createTodo, (req, _res, _next) => [req.body]));
+
+router.put("/", call(Todo.updateTodo), (req,_res,_next)=> [req.params.todo,req.body])
+
+
 export const todoRouter = router;
