@@ -9,13 +9,14 @@ export class TodoController extends BaseController {
     public getTodoDetails = async (todo) => {
         return this.sendResponse(todo);
      }
-    public createTodo = async (data:{title: string, body: string}) => {
-        const todo = TodoService.createTodo(data);
+    public createTodo = async (data) => {
+       const todo = await TodoService.createTodo(data);
+       const { title } = data;
        console.log(todo)
-       return this.sendResponse(`${data.title},${data.body} created.`);
+       return this.sendResponse(`${title} created.`);
     }
     public updateTodo = async (id, data:{title:string,body:string}) => {
-        const todo = TodoService.updateTodo(id, data);    
+        const todo = await TodoService.updateTodo(id, data);    
         console.log(todo)
         return this.sendResponse(`${data.title}, created.`);
     }
