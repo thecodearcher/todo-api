@@ -18,6 +18,8 @@
   "author": "Brian Iyoha",
   "license": "ISC",
   "dependencies": {
+    "@hapi/joi": "^15.1.0",
+    "@types/hapi__joi": "^15.0.3",
     "app-root-path": "^2.1.0",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
