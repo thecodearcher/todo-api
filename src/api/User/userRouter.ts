@@ -2,11 +2,9 @@ import { AppError } from "./../../utils/app-error";
 import Joi from "@hapi/joi";
 import express from "express";
 import { controllerHandler } from "../../shared/controllerHandler";
-// import { logger } from "../../utils/logger";
 import { UserController } from "./userController";
 import { schema } from "./userValidator";
 
-// const app = express();
 const router = express.Router();
 const call = controllerHandler;
 const User = new UserController();
